@@ -11,6 +11,7 @@ import snow_img from "../assets/snow.png";
 import wind_img from "../assets/wind.png";
 
 const Weather = () => {
+  const API_KEY = "fd7f479ede8339360cbc4cb32369cb40";
   const inputRef = useRef();
   const allIcons = {
     "01d": clear_img,
@@ -34,7 +35,7 @@ const Weather = () => {
       alert("Enter city name");
     }
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=fd7f479ede8339360cbc4cb32369cb40`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
       const response = await fetch(url);
       const data = await response.json();
       console.log(data);
